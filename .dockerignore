@@ -1,0 +1,11 @@
+react/node_modules
+Dockerfile*
+docker-compose*
+.dockerignore
+.git
+README.md
+__pycache__
+.DS_Store
+
+# All dev env files
+.*-dev

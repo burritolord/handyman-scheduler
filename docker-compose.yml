@@ -1,0 +1,48 @@
+version: '3.5'
+
+services:
+  react:
+    build: './react'
+    depends_on:
+      - 'flask'
+      - 'database'
+    volumes:
+      - './react:/app'
+#      - '/app/node_modules'
+    ports:
+      - '3000:3000'
+    env_file:
+      - 'react/.env-react-dev'
+#      - 'react/.env-react-prod'
+
+  flask:
+    build: './flask'
+    restart: always
+    depends_on:
+      - 'database'
+    volumes:
+      - './flask:/app'
+    ports:
+      - '5000:5000'
+    env_file:
+      - 'flask/.env-flask-dev'
+#      - 'flask/.env-flask-prod'
+    networks:
+      - database
+
+  database:
+    image: 'postgres:10.3-alpine'
+    restart: always
+    env_file:
+      - 'flask/.env-database-dev'
+#      - 'flask/.env-database-prod'
+    volumes:
+      - 'db-data:/var/lib/postgresql/data'
+    networks:
+      - database
+
+volumes:
+  db-data: {}
+
+networks:
+  database: {}
