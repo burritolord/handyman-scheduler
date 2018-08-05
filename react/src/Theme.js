@@ -1,13 +1,12 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import { blue } from '@material-ui/core/colors';
 
 const Theme = createMuiTheme({
   palette: {
     primary: {
-      main: blue[500],
+      main: '#054963',
     },
     secondary: {
-      main: blue[800],
+      main: '#023245',
     },
   },
   overrides: {
@@ -19,7 +18,6 @@ const Theme = createMuiTheme({
   },
   appWidth: {
     width: '100%',
-    maxWidth: 960,
     paddingLeft: 12,
     paddingRight: 12,
   },

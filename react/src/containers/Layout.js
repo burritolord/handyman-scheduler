@@ -2,12 +2,10 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, withStyles } from '@material-ui/core';
 import Header from '../components/Header/Header';
+import SideDrawer from '../components/Sidedrawer/SideDrawer';
 
 const styles = theme => ({
   root: {},
-  content: {
-    ...theme.appWidth,
-  }
 });
 
 class Layout extends Component {
@@ -15,23 +13,42 @@ class Layout extends Component {
     super(props);
 
     this.state = {
-
+      mobileOpen: false,
     };
+
+    this.handleDrawerToggle = this.handleDrawerToggle.bind(this);
+  }
+
+  handleDrawerToggle() {
+    this.setState(state => ({ mobileOpen: !state.mobileOpen }));
   }
 
   render() {
-    const { children, classes } = this.props;
+    const {
+      children,
+      classes,
+    } = this.props;
+
+    const {
+      mobileOpen,
+    } = this.state;
 
     return (
       <Fragment>
-        <Header />
-        <main>
-          <Grid container justify="center">
-            <Grid item className={classes.content}>
-              {children}
-            </Grid>
+        <Header handleDrawerToggle={this.handleDrawerToggle} />
+        <Grid container>
+          <Grid item>
+            <SideDrawer
+              mobileOpen={mobileOpen}
+              onClose={this.handleDrawerToggle}
+            />
           </Grid>
-        </main>
+          <Grid item>
+            <main>
+              {children}
+            </main>
+          </Grid>
+        </Grid>
       </Fragment>
     );
   }

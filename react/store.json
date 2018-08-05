@@ -1,19 +1,99 @@
 {
-  "posts": [
+  "clients": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "clientId": 1,
+      "first_name": "Josh",
+      "last_name": "Daniels",
+      "company_name": "Daniel Co",
+      "billing": {
+        "street": "1234 34th st",
+        "city": "Berkeley",
+        "state": "California",
+        "zip": "94634",
+        "country": "United States"
+      },
+      "number": [
+        {
+          "type": "mobile",
+          "value": "510-333-4321",
+          "primary": true
+        }
+      ],
+      "email": [
+        {
+          "type": "personal",
+          "value": "blahblah@blah.com",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "clientId": 2,
+      "first_name": "Enrique",
+      "last_name": "Tabares",
+      "company_name": "",
+      "billing": {
+        "street": "6644 97th st",
+        "city": "Oakland",
+        "state": "California",
+        "zip": "94621",
+        "country": "United States"
+      },
+      "number": [
+        {
+          "type": "mobile",
+          "value": "510-555-1121",
+          "primary": true
+        }
+      ],
+      "email": [
+        {
+          "type": "personal",
+          "value": "enriticus@blah.com",
+          "primary": true
+        }
+      ]
     }
   ],
-  "comments": [
+  "properties": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "propertyId": 1,
+      "clientId": 1,
+      "street": "1234 55th St",
+      "city": "Oakland",
+      "state": "California",
+      "zip": "94621",
+      "country": "United States",
+      "gate": true,
+      "dog": false,
+      "notes": ""
+    },
+    {
+      "propertyId": 2,
+      "clientId": 1,
+      "street": "5533 95th St",
+      "city": "Oakland",
+      "state": "California",
+      "zip": "94605",
+      "country": "United States",
+      "gate": false,
+      "dog": false,
+      "notes": ""
+    },
+    {
+      "propertyId": 3,
+      "clientId": 2,
+      "street": "6644 97th St",
+      "city": "Oakland",
+      "state": "California",
+      "zip": "94621",
+      "country": "United States",
+      "gate": false,
+      "dog": false,
+      "notes": "There is some special stuff about this property"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "quotes": [
+
+  ]
 }
