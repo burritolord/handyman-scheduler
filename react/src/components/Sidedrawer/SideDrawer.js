@@ -8,8 +8,9 @@ import {
   withStyles,
 } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
+import DrawerLinks from './DrawerLinks';
 
-const drawerWidth = 240;
+const drawerWidth = 220;
 
 const styles = theme => ({
   root: {
@@ -42,35 +43,6 @@ const SideDrawer = (props) => {
     onClose,
   } = props;
 
-  const drawer = (
-    <Grid
-      container
-      direction="column"
-      alignItems="center"
-    >
-      <NavLink to="/clients">
-        <Typography variant="headline">
-          Clients
-        </Typography>
-      </NavLink>
-      <NavLink to="/invoices">
-        <Typography variant="headline">
-          Invoices
-        </Typography>
-      </NavLink>
-      <NavLink to="/quotes">
-        <Typography variant="headline">
-          Quotes
-        </Typography>
-      </NavLink>
-      <NavLink to="/calendar">
-        <Typography variant="headline">
-          Calendar
-        </Typography>
-      </NavLink>
-    </Grid>
-  );
-
   return (
     <div className={classes.root}>
       <Hidden mdUp>
@@ -85,7 +57,7 @@ const SideDrawer = (props) => {
             keepMounted: true, // Better open performance on mobile.
           }}
         >
-          {drawer}
+          <DrawerLinks />
         </Drawer>
       </Hidden>
       <Hidden smDown implementation="css">
@@ -96,7 +68,7 @@ const SideDrawer = (props) => {
             paper: classes.drawerPaper,
           }}
         >
-          {drawer}
+          <DrawerLinks />
         </Drawer>
       </Hidden>
     </div>

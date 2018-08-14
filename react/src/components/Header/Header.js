@@ -17,12 +17,8 @@ const styles = theme => ({
     zIndex: theme.zIndex.drawer + 1,
   },
   appWidth: theme.appWidth,
-  leftMargin: {
-    marginLeft: '10px',
-  },
   flex: {
     display: 'flex',
-    direction: 'row',
     alignItems: 'center',
   },
   navIconHide: {
@@ -61,19 +57,10 @@ const Header = (props) => {
                 <Grid container alignItems="center">
                   <Button
                     variant="contained"
-                    className={classes.leftMargin}
                     component={Link}
                     to="/login"
                   >
                     Log In
-                  </Button>
-                  <Button
-                    variant="contained"
-                    className={classes.leftMargin}
-                    component={Link}
-                    to="/signup"
-                  >
-                    Sign Up
                   </Button>
                 </Grid>
               </Grid>
