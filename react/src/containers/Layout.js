@@ -14,13 +14,31 @@ class Layout extends Component {
 
     this.state = {
       mobileOpen: false,
+      menusOpen: {},
     };
 
     this.handleDrawerToggle = this.handleDrawerToggle.bind(this);
+    this.handleExpandMenuList = this.handleExpandMenuList.bind(this);
   }
 
   handleDrawerToggle() {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
+  }
+
+  handleExpandMenuList(event, menu) {
+    this.setState(
+      (state) => {
+        if (state.menusOpen.hasOwnProperty(menu)) {
+          return {
+            menusOpen: {
+              ...state.menusOpen,
+              [menu]: !state.menusOpen[menu],
+            },
+          };
+        }
+        return { menusOpen: {[menu]: true }};
+      }
+    );
   }
 
   render() {
@@ -31,6 +49,7 @@ class Layout extends Component {
 
     const {
       mobileOpen,
+      menusOpen,
     } = this.state;
 
     return (
@@ -41,6 +60,8 @@ class Layout extends Component {
             <SideDrawer
               mobileOpen={mobileOpen}
               onClose={this.handleDrawerToggle}
+              menusOpen={menusOpen}
+              expandMenuList={this.handleExpandMenuList}
             />
           </Grid>
           <Grid item>

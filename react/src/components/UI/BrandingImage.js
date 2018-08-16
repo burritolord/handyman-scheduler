@@ -13,14 +13,14 @@ const styles = {
     alignItems: 'center',
   },
   logo: {
-    height: '30px',
+    height: '28px',
     width: 'auto',
   },
   text: {
     height: '15px',
   },
   spacing: {
-    paddingLeft: 5,
+    paddingLeft: 8,
   },
 };
 

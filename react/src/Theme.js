@@ -14,12 +14,15 @@ const Theme = createMuiTheme({
       colorPrimary: {
         color: '#5A5A5A',
       },
+      colorSecondary: {
+        color: '#FFFFFF',
+      },
     },
   },
   appWidth: {
     width: '100%',
-    paddingLeft: 12,
-    paddingRight: 12,
+    paddingLeft: 16,
+    paddingRight: 16,
   },
 });
 

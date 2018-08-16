@@ -2,13 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   Drawer,
-  Grid,
   Hidden,
-  Typography,
   withStyles,
 } from '@material-ui/core';
-import { NavLink } from 'react-router-dom';
-import DrawerLinks from './DrawerLinks';
+import Navigation from '../Navigation/Navigation';
 
 const drawerWidth = 220;
 
@@ -41,6 +38,8 @@ const SideDrawer = (props) => {
     classes,
     mobileOpen,
     onClose,
+    menusOpen,
+    expandMenuList,
   } = props;
 
   return (
@@ -57,7 +56,10 @@ const SideDrawer = (props) => {
             keepMounted: true, // Better open performance on mobile.
           }}
         >
-          <DrawerLinks />
+          <Navigation
+            menusOpen={menusOpen}
+            expandMenuList={expandMenuList}
+          />
         </Drawer>
       </Hidden>
       <Hidden smDown implementation="css">
@@ -68,7 +70,10 @@ const SideDrawer = (props) => {
             paper: classes.drawerPaper,
           }}
         >
-          <DrawerLinks />
+          <Navigation
+            menusOpen={menusOpen}
+            expandMenuList={expandMenuList}
+          />
         </Drawer>
       </Hidden>
     </div>

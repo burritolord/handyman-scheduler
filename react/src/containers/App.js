@@ -15,8 +15,10 @@ class App extends Component {
         <Router>
           <Layout>
             <Switch>
-              <Route exact path="/" render={() => <div>Home</div>} />
-              <Route path="/clients" render={() => <div>Clients</div>} />
+              <Route exact path="/" render={() => <div>Dashboard</div>} />
+              <Route path="/dashboard" render={() => <div>Dashboard</div>} />
+              <Route path="/clients/people" render={() => <div>Clients</div>} />
+              <Route path="/clients/properties" render={() => <div>properties</div>} />
               <Route path="/invoices" render={() => <div>Invoices</div>} />
               <Route path="/quotes" render={() => <div>Quotes</div>} />
               <Route path="/calendar" render={() => <div>Calendar</div>} />
