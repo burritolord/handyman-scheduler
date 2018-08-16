@@ -36,7 +36,12 @@ class Layout extends Component {
             },
           };
         }
-        return { menusOpen: {[menu]: true }};
+        return {
+          menusOpen: {
+            ...state.menusOpen,
+            [menu]: true,
+          },
+        };
       }
     );
   }

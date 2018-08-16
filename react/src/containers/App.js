@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { CssBaseline, MuiThemeProvider } from '@material-ui/core';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch,
+} from 'react-router-dom';
 import Layout from './Layout';
 import Theme from '../Theme';
 import Login from '../components/Login/Login';
@@ -15,12 +20,13 @@ class App extends Component {
         <Router>
           <Layout>
             <Switch>
-              <Route exact path="/" render={() => <div>Dashboard</div>} />
+              <Route exact path="/" render={() => <Redirect to="/dashboard"/>} />
               <Route path="/dashboard" render={() => <div>Dashboard</div>} />
               <Route path="/clients/people" render={() => <div>Clients</div>} />
               <Route path="/clients/properties" render={() => <div>properties</div>} />
-              <Route path="/invoices" render={() => <div>Invoices</div>} />
-              <Route path="/quotes" render={() => <div>Quotes</div>} />
+              <Route path="/work/quotes" render={() => <div>Quotes</div>} />
+              <Route path="/work/jobs" render={() => <div>Jobs</div>} />
+              <Route path="/work/invoices" render={() => <div>Invoices</div>} />
               <Route path="/calendar" render={() => <div>Calendar</div>} />
               <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} />
