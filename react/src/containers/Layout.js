@@ -6,6 +6,9 @@ import SideDrawer from '../components/Sidedrawer/SideDrawer';
 
 const styles = theme => ({
   root: {},
+  content: {
+    width: 'inherit',
+  },
 });
 
 class Layout extends Component {
@@ -60,7 +63,10 @@ class Layout extends Component {
     return (
       <Fragment>
         <Header handleDrawerToggle={this.handleDrawerToggle} />
-        <Grid container>
+        <Grid
+          container
+          wrap="nowrap"
+        >
           <Grid item>
             <SideDrawer
               mobileOpen={mobileOpen}
@@ -69,7 +75,10 @@ class Layout extends Component {
               expandMenuList={this.handleExpandMenuList}
             />
           </Grid>
-          <Grid item>
+          <Grid
+            item
+            className={classes.content}
+          >
             <main>
               {children}
             </main>

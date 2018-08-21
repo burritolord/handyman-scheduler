@@ -11,6 +11,7 @@ import Theme from '../Theme';
 import Login from '../components/Login/Login';
 import Signup from '../components/Signup/Signup';
 import NotFound from '../components/Errors/NotFound';
+import ClientList from '../components/Clients/ClientList/ClientList';
 
 class App extends Component {
   render() {
@@ -22,7 +23,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" render={() => <Redirect to="/dashboard"/>} />
               <Route path="/dashboard" render={() => <div>Dashboard</div>} />
-              <Route path="/clients/people" render={() => <div>Clients</div>} />
+              <Route path="/clients/people" component={ClientList} />
               <Route path="/clients/properties" render={() => <div>properties</div>} />
               <Route path="/work/quotes" render={() => <div>Quotes</div>} />
               <Route path="/work/jobs" render={() => <div>Jobs</div>} />
